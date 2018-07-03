@@ -1,6 +1,4 @@
 import com.google.gson.Gson;
-import jdk.nashorn.internal.parser.JSONParser;
-import sun.misc.IOUtils;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -38,7 +36,7 @@ public class Main {
 
         String solve = part[1];
 
-        String r = Misc.LhsToRhs.solution(part[0]);
+        String r = Misc.LhsToRhs.solution(st);
         System.out.println("This is final:" + r);
         System.out.println("X : \n" + Calculate.evaluate("2 3 *"));
 

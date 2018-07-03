@@ -11,7 +11,7 @@ public class LhsToRhs {
 
         ImmutableList<String> OP_LIST = ImmutableList.of("+", "-", "*", "/");
 
-        ImmutableMap<String, String> OP_MAP = ImmutableMap.builder()
+        ImmutableMap<Object, Object> OP_MAP = ImmutableMap.builder()
                 .put("+", "-")
                 .put("-", "+")
                 .put("*", "/")
@@ -20,11 +20,10 @@ public class LhsToRhs {
 
 //        String temps;
         //Splitting string in LHS and RHS
-//        String[] splitExp = temps.split("=");
+        String[] splitExp = exp.split("=");
 //        String temp = part[0] + part[1];
 
-        String[] splitExp = new String[0];
-        List<String> fst = Arrays.asList(splitExp[0].split("?<=[-*/{])|(?=[-*/}])"));
+        List<String> fst = Arrays.asList(splitExp[0].split("(?<=[-*/{])|(?=[-*/}])"));
 
         Stack<String> st = new Stack<>();
         for (int i = 0; i < fst.size(); i++) {
